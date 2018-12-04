@@ -12,9 +12,15 @@
 		if($posts_a->have_posts()):
 			while($posts_a->have_posts()):
 				$posts_a->the_post();
-				setup_postdata($post);
-					echo $post->post_title;
+				setup_postdata($post); ?>
 
+				<h2>
+					<a href="<?php the_permalink(); ?>">
+						<?php echo esc_html($post->post_title); ?>
+					</a>
+				</h2>
+
+	<?php				
 			endwhile; 
 			wp_reset_postdata();
 		endif;	

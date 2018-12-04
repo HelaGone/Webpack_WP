@@ -31,14 +31,13 @@
 	</script>
 </head>
 <body <?php body_class(); ?>>
-	<header>
+	<header id="main_site_header">
 		<picture id="logo">
-			<img src="" alt="Los Pleyers Logo">
+			<a href="<?php echo esc_url(home_url()); ?>">
+				<img src="" alt="El Logo">
+			</a>
 		</picture>
-		<nav id="main_navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
-		</nav>
-		<div id="social_network">
+		<div class="social_network">
 			<ul>
 				<li>
 					<a href=""><img src="" alt="Facebook"></a>
@@ -54,6 +53,17 @@
 				</li>
 			</ul>
 		</div>
+		<figure>
+			<button id="open_menu">
+				<img src="" alt="Menu Button">
+			</button>
+			<button id="close_menu" hidden>
+				<img src="" alt="Menu Button">
+			</button>
+		</figure>
 	</header>
+	<nav class="main_navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
+	</nav>
 		
 			

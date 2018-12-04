@@ -22,7 +22,7 @@
 		wp_enqueue_style( 'styles', get_stylesheet_uri() );
 
 		//webpack styles
-		wp_enqueue_style('webpack_styles', get_template_directory_uri().'/dist/main.css', array(), '1.0.0');
+		wp_enqueue_style('webpack_styles', get_template_directory_uri().'/dist/css/main.css', array(), '1.0.0');
 
 		//Webpack scripts & styles (Selective enqueue)
 		wp_register_script('base-theme-main', get_template_directory_uri().'/dist/main.js', array(), '1.0.0');

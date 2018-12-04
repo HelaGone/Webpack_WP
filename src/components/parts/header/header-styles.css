@@ -1,1 +1,7 @@
-header{border:1px solid orange;width:100%;}
+#main_site_header{border:1px solid orange;width:100%;display: flex;justify-content: space-between; flex-wrap: wrap;padding:8px 24px;}
+#main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
+
+/*Main Navigation*/
+.menu-main-menu{width:0;border:1px solid blue;position: relative;}
+.main_navigation div{position: absolute;right: 0;top:40px;}
+.main_navigation div ul.menu li{padding:8px 24px;border:1px solid cyan;margin-bottom:8px;}

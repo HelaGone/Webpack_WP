@@ -1,7 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var debug = process.env.NODE_ENV !== 'production';
-const webpack = require('webpack');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
 	devtool: debug ? 'inline-sourcemap' : null,
@@ -50,14 +51,25 @@ module.exports = {
 		}]
 	},
 	plugins: [
+		new CleanWebpackPlugin(['dist']),
 		new ExtractTextPlugin({
 			filename: (getPath)=>{
 				return getPath('css/[name].css').replace('css/js', 'css');
 			},
 			allChunks: true
 		}),
-		new webpack.optimize.CommonChunkPlugin({
-			name: 'common'
-		})
+		new WorkboxPlugin.GenerateSW({
+			exclude: [/\.(?:png|jpg|jpeg|svg|gif)$/],
+			runtimeCaching: [{
+				urlPattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
+				handler: 'cacheFirst',
+				options: {
+					cacheName: 'cache-images',
+					expiration: {
+						maxEntries: 20
+					},
+				},
+			}],
+		}),
 	]
-}
+};
