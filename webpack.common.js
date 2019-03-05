@@ -1,18 +1,28 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
 	entry: {
 		main: './src/index', 
-		home: './src/components/templates/home/index',
-		single: './src/components/templates/single/index',
-		archive: './src/components/templates/archive/index',
-		category: './src/components/templates/category/index',
-		author: './src/components/templates/author/index',
-		image: './src/components/templates/image/index',
-		tag: './src/components/templates/tag/index'
+		home: './src/components/templates/home/index.js',
+		single: './src/components/templates/single/index.js',
+		archive: './src/components/templates/archive/index.js',
+		category: './src/components/templates/category/index.js',
+		author: './src/components/templates/author/index.js',
+		image: './src/components/templates/image/index.js',
+		tag: './src/components/templates/tag/index.js'
+	},
+	output: {
+		filename: '[name].js',
+		path: path.resolve(__dirname, 'dist')
+	}, 
+	optimization:{
+		splitChunks: {
+			chunks: "all"
+		}
 	},
 	module: {
 		rules:[{
@@ -27,29 +37,23 @@ module.exports = {
 		},
 		{
 			test: /\.css$/,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{
-					loader: 'css-loader',
-					options: {
-						importLoaders: 1,
-						sourceMap: true
-					}
-				}]
-			})
+			use:[
+				{
+					loader: MiniCssExtractPlugin.loader
+				},
+				'css-loader'
+			]
 		},
 		{
-			test: /\.(png|svg|jpg|gif)$/,
+			test: /\.(png|svg|jpg|jpeg|gif)$/,
 			use: ['file-loader']
 		}]
 	},
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
-		new ExtractTextPlugin({
-			filename: (getPath)=>{
-				return getPath('css/[name].css').replace('css/js', 'css');
-			},
-			allChunks: true
+		new MiniCssExtractPlugin({
+			filename: '[name].css',
+			chunkFilename: '[id].css'
 		}),
 		new WorkboxPlugin.GenerateSW({
 			exclude: [/\.(?:png|jpg|jpeg|svg|gif)$/],
@@ -64,14 +68,5 @@ module.exports = {
 				},
 			}],
 		}),
-	],
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].js'
-	}, 
-	optimization:{
-		splitChunks: {
-			chunks: "all"
-		}
-	}
+	]
 };

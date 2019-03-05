@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var debug = process.env.NODE_ENV !== 'production';
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -18,9 +19,14 @@ module.exports = {
 		tag: './src/components/templates/tag/index'
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].js'
+		filename: '[name].js',
+		path: path.resolve(__dirname, 'dist')
 	},
+	optimization:{
+		splitChunks: {
+			chunks: 'all'
+		}
+	}
 	module: {
 		rules:[{
 			test: /\.js$/,
@@ -34,29 +40,23 @@ module.exports = {
 		},
 		{
 			test: /\.css$/,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{
-					loader: 'css-loader',
-					options: {
-						importLoaders: 1,
-						sourceMap: true
-					}
-				}]
-			})
+			use: [
+				{
+					loader: MiniCssExtractPlugin.loader
+				},
+				'css-loader'
+			]
 		},
 		{
-			test: /\.(png|svg|jpg|gif)$/,
+			test: /\.(png|svg|jpg|jpeg|gif)$/,
 			use: ['file-loader']
 		}]
 	},
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
-		new ExtractTextPlugin({
-			filename: (getPath)=>{
-				return getPath('css/[name].css').replace('css/js', 'css');
-			},
-			allChunks: true
+		new MiniCssExtractPlugin({
+			filename: '[name].css',
+			chunkFileName: '[id].css'
 		}),
 		new WorkboxPlugin.GenerateSW({
 			exclude: [/\.(?:png|jpg|jpeg|svg|gif)$/],

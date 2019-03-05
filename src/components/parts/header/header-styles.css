@@ -1,7 +1,13 @@
-#main_site_header{border:1px solid orange;width:100%;display: flex;justify-content: space-between; flex-wrap: wrap;padding:8px 24px;}
+#main_site_header{border:1px solid red;width:100%;display: flex;justify-content: space-between; flex-wrap: wrap;padding:8px 24px;margin:30px 0px;}
 #main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
 /*Main Navigation*/
 .menu-main-menu{width:0;border:1px solid blue;position: relative;}
 .main_navigation div{position: absolute;right: 0;top:40px;}
 .main_navigation div ul.menu li{padding:8px 24px;border:1px solid cyan;margin-bottom:8px;}
+
+.social_logos{width:30px; height: 30px; border:1px dotted cyan;}
+#facebook{background-image: url(../../../img/flogo-RGB-HEX-Blk-144.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
+#twitter{background-image: url(../../../img/Twitter_Social_Icon_Circle_Color.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
+#instagram{background-image: url(../../../img/glyph-logo_May2016.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
+#youtube{background-image: url(../../../img/youtube_social_circle_dark.png);background-size: contain;background-position: center;background-repeat: no-repeat; }

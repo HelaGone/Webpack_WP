@@ -34,25 +34,25 @@
 		wp_register_script('base-theme-single', get_template_directory_uri().'/dist/single.js', array(), '1.0.0');
 
 		if(is_front_page()){
-			wp_enqueue_style('base-theme-home-style', get_template_directory_uri().'/dist/css/home.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-home-style', get_template_directory_uri().'/dist/home.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-home');
 		}elseif(is_author()){
-			wp_enqueue_style('base-theme-author-style', get_template_directory_uri().'/dist/css/author.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-author-style', get_template_directory_uri().'/dist/author.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-author');
 		}elseif(is_tag()){
-			wp_enqueue_style('base-theme-tag-style', get_template_directory_uri().'/dist/css/tag.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-tag-style', get_template_directory_uri().'/dist/tag.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-tag');
 		}elseif(is_category()){
-			wp_enqueue_style('base-theme-category-style', get_template_directory_uri().'/dist/css/category.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-category-style', get_template_directory_uri().'/dist/category.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-category');
 		}elseif(is_archive()){
-			wp_enqueue_style('base-theme-archive-style', get_template_directory_uri().'/dist/css/archive.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-archive-style', get_template_directory_uri().'/dist/archive.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-archive');
 		}elseif(is_single()){
-			wp_enqueue_style('base-theme-single-style', get_template_directory_uri().'/dist/css/single.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-single-style', get_template_directory_uri().'/dist/single.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-single');
 		}else{
-			wp_enqueue_style( 'base-theme-style', get_template_directory_uri() . '/dist/css/main.css', array(), '1.0.0');
+			wp_enqueue_style( 'base-theme-style', get_template_directory_uri() . '/dist/main.css', array(), '1.0.0');
 			wp_enqueue_script('base-theme-main');
 		}
 

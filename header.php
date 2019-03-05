@@ -40,16 +40,24 @@
 		<div class="social_network">
 			<ul>
 				<li>
-					<a href=""><img src="" alt="Facebook"></a>
+					<a href="">
+						<div id="facebook" class="social_logos"></div>
+					</a>
 				</li>
 				<li>
-					<a href=""><img src="" alt="Twitter"></a>
+					<a href="">
+						<div id="twitter" class="social_logos"></div>
+					</a>
 				</li>
 				<li>
-					<a href=""><img src="" alt="Youtube"></a>
+					<a href="">
+						<div id="youtube" class="social_logos"></div>
+					</a>
 				</li>
 				<li>
-					<a href=""><img src="" alt="Instagram"></a>
+					<a href="">
+						<div id="instagram" class="social_logos"></div>
+					</a>
 				</li>
 			</ul>
 		</div>
