@@ -1,1 +1,5 @@
-#home_section{border:1px solid green;}
+#home_section{background-color:#eee;}
+
+.barra_a_section{background-color: rgba(0,0,0,0.1);display: grid;grid-template-columns:auto auto auto auto;justify-content: space-between;grid-gap: 24px;}
+/*.barra_a_section figure.barra_a_figure{max-width: calc(100% / 4)}*/
+.barra_a_section figure.barra_a_figure img{width:100%;height: auto;}

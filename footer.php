@@ -1,5 +1,5 @@
 	<footer class="site-footer" role="contentinfo">
-		Este es el footer
+		<p class="white_parr">nofm-radio.com®</p>
 	</footer>
 	<?php wp_footer(); ?>
 </body>
