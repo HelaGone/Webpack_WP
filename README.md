@@ -1,9 +1,9 @@
-WordPress Base Theme
+WordPress Webpack Theme
 =============
 
 ![CubeInTheBox](https://cubeinthebox.com/screenshot.png)
 
-Usar para iniciar un nuevo tema de WordPress
+Use for build an awesome Wordpress theme
 
 ### Credits
 
