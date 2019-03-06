@@ -1,7 +1,7 @@
 WordPress Base Theme
 =============
 
-#![CubeInTheBox](https://cubeinthebox.com/screenshot.png)
+![CubeInTheBox](https://cubeinthebox.com/screenshot.png)
 
 Usar para iniciar un nuevo tema de WordPress
 
