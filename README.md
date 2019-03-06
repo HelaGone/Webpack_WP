@@ -8,7 +8,7 @@ Usar para iniciar un nuevo tema de WordPress
 ### Credits
 
 Link: https://cubeinthebox.com/<br />
-Author: Holkan Luna
+Author: Holkan Luna<br />
 Author URI: https://cubeinthebox.com/<br />
 Contributors: TLJ<br />
 Tags: wordpress, themes, Webpack<br />
