@@ -9,7 +9,7 @@ Usar para iniciar un nuevo tema de WordPress
 
 Link: https://cubeinthebox.com/<br />
 Author: Holkan Luna
-Author URI: https://cubeinthebox.com/
+Author URI: https://cubeinthebox.com/<br />
 Contributors: TLJ<br />
 Tags: wordpress, themes, Webpack<br />
 Tested up to: 5,1<br />
