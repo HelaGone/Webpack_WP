@@ -1,7 +1,7 @@
 WordPress Base Theme
 =============
 
-![CubeInTheBox](http://lisa.mx/screenshot.png)
+#![CubeInTheBox](http://lisa.mx/screenshot.png)
 
 Usar para iniciar un nuevo tema de WordPress
 
@@ -10,7 +10,6 @@ Usar para iniciar un nuevo tema de WordPress
 Link: https://cubeinthebox.com/<br />
 Author: Holkan Luna<br />
 Author URI: https://cubeinthebox.com/<br />
-Contributors: TLJ<br />
 Tags: wordpress, themes, Webpack<br />
 Tested up to: 5,1<br />
 Stable tag: 1.0<br />
