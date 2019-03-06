@@ -1,8 +1,6 @@
 WordPress Base Theme
 =============
 
-#![CubeInTheBox](http://lisa.mx/screenshot.png)
-
 Usar para iniciar un nuevo tema de WordPress
 
 ### Credits
