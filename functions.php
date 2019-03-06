@@ -22,7 +22,7 @@
 		wp_enqueue_style( 'styles', get_stylesheet_uri() );
 
 		//webpack styles
-		wp_enqueue_style('webpack_styles', get_template_directory_uri().'/dist/css/main.css', array(), '1.0.0');
+		// wp_enqueue_style('webpack_styles', get_template_directory_uri().'/dist/main.css', array(), '1.0.0');
 
 		//Webpack scripts & styles (Selective enqueue)
 		wp_register_script('base-theme-main', get_template_directory_uri().'/dist/main.js', array(), '1.0.0');
@@ -101,9 +101,42 @@
 
 // POST THUMBNAILS SUPPORT ///////////////////////////////////////////////////////////
 
-	if ( function_exists('add_theme_support') ){
-		add_theme_support('post-thumbnails');
+
+	function bt_setup_theme_supported_features() {
+		if ( function_exists('add_theme_support') ){
+			add_theme_support('post-thumbnails');
+			add_theme_support( 'align-wide' );
+			add_theme_support('editor-styles');
+			add_theme_support( 'wp-block-styles' );
+			add_editor_style( 'style-editor.css' );
+
+	    /*add_theme_support( 'editor-color-palette', 
+	    	array(
+	        array(
+	            'name' => __( 'strong magenta', 'themeLangDomain' ),
+	            'slug' => 'strong-magenta',
+	            'color' => '#a156b4',
+	        ),
+	        array(
+	            'name' => __( 'light grayish magenta', 'themeLangDomain' ),
+	            'slug' => 'light-grayish-magenta',
+	            'color' => '#d0a5db',
+	        ),
+	        array(
+	            'name' => __( 'very light gray', 'themeLangDomain' ),
+	            'slug' => 'very-light-gray',
+	            'color' => '#eee',
+	        ),
+	        array(
+	            'name' => __( 'very dark gray', 'themeLangDomain' ),
+	            'slug' => 'very-dark-gray',
+	            'color' => '#444',
+	      	)
+	      )
+	    );*/
+		}
 	}
+	add_action( 'after_setup_theme', 'bt_setup_theme_supported_features' );
 
 	/**
 	 * [add_image_size] 
@@ -119,15 +152,12 @@
 	if(!validate_file('inc/post-types.php')){
 		require_once('inc/post-types.php');
 	}
-
 	if(!validate_file('inc/metaboxes.php')){
 		require_once('inc/metaboxes.php');
 	}
-
 	if(!validate_file('inc/taxonomies.php')){
 		require_once('inc/taxonomies.php');
 	}
-
 	if(!validate_file('inc/pages.php')){
 		require_once('inc/pages.php');
 	}
@@ -138,14 +168,13 @@
 		if ( $query->is_main_query() and ! is_admin() ) {
 			// $query->set( 'cat', '123' );
 		}
-
 		return $query;
 	});
 
 // THE EXECRPT FORMAT AND LENGTH /////////////////////////////////////////////////////
 
 	add_filter('excerpt_length', function($length){
-		return 20;
+		return 13;
 	});
 
 	add_filter('excerpt_more', function(){
@@ -169,7 +198,7 @@
 	 * @param  string  $taxonomy
 	 * @return string
 	 */
-	function print_the_terms($post_id, $taxonomy = 'category'){
+	function bt_print_the_terms($post_id, $taxonomy = 'category'){
 		$terms = get_the_terms( $post_id, $taxonomy );
 
 		if ( $terms and ! is_wp_error($terms) ){
@@ -184,7 +213,7 @@
 	 * @param  string  $size
 	 * @return string  url de la imagen
 	 */
-	function attachment_image_url($post_id, $size){
+	function bt_attachment_image_url($post_id, $size){
 		$image_id   = get_post_thumbnail_id($post_id);
 		$image_data = wp_get_attachment_image_src($image_id, $size, true);
 		echo isset($image_data[0]) ? $image_data[0] : '';
@@ -194,9 +223,9 @@
 	 *	Get attachment data
 	 *	alt, caption, description, href, src, title
 	 *	usage:
-	 *	$attachment_meta = wp_get_attachment(your_attachment_id);
+	 *	$attachment_meta = bt_get_attachment(your_attachment_id);
 	*/
-	function wp_get_attachment( $attachment_id ) {
+	function bt_get_attachment( $attachment_id ) {
 		$attachment = get_post( $attachment_id );
 		return array(
 		    'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),

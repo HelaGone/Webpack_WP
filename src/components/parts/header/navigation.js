@@ -1,11 +1,9 @@
-window.addEventListener('load', ()=>{
-	console.log('navigation functions');
-
-	let open_menu_button = document.getElementById('open_menu');
-	open_menu_button.addEventListener('click', ()=>{
-		console.log('menu btn click');
-
-		console.log(document.querySelector('.menu-main-menu'));
-
+$(document).ready(function(){
+	console.log('navigation');
+	// Hace la animación del botón menú
+	let btnMenu = document.getElementById('btn_menu');
+	btnMenu.addEventListener('click', ()=>{
+		btnMenu.classList.toggle('change');
 	});
+
 });
