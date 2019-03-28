@@ -1,6 +1,5 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
@@ -13,7 +12,8 @@ module.exports = {
 		category: './src/components/templates/category/index.js',
 		author: './src/components/templates/author/index.js',
 		image: './src/components/templates/image/index.js',
-		tag: './src/components/templates/tag/index.js'
+		tag: './src/components/templates/tag/index.js',
+		page: './src/components/templates/page/index.js'
 	},
 	output: {
 		filename: '[name].js',
@@ -21,7 +21,25 @@ module.exports = {
 	}, 
 	optimization:{
 		splitChunks: {
-			chunks: "all"
+			chunks: 'all',
+			minSize: 30000,
+	    	maxSize: 0,
+	    	minChunks: 1,
+	    	maxAsyncRequests: 5,
+	    	maxInitialRequests: 3,
+	    	automaticNameDelimiter: '~',
+	    	name: true,
+    		cacheGroups: {
+    	    	vendors: {
+    	      		test: /[\\/]node_modules[\\/]/,
+    	      		priority: -10
+    	    	},
+    	    	default: {
+    	      		minChunks: 2,
+    	      		priority: -20,
+    	      		reuseExistingChunk: true
+    	    	}
+    	  	}
 		}
 	},
 	module: {
@@ -50,6 +68,14 @@ module.exports = {
 				loader: 'file-loader',
 				options: {
 					name: './assets/[hash].[ext]'
+				}
+			}
+		},{
+			test: /\.(woff|woff2|eot|ttf|otf)$/,
+			use: {
+				loader: 'file-loader',
+				options:{
+					name: './fonts/[name].[ext]'
 				}
 			}
 		}]
