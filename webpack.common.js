@@ -15,7 +15,8 @@ module.exports = {
 		author: './src/components/templates/author/index.js',
 		image: './src/components/templates/image/index.js',
 		tag: './src/components/templates/tag/index.js',
-		page: './src/components/templates/page/index.js'
+		page: './src/components/templates/page/index.js',
+		not_found: './src/components/templates/404/index.js',
 	},
 	output: {
 		filename: '[name].js',
