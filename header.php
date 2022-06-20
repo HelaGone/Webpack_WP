@@ -31,39 +31,20 @@
 </head>
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
-		<div id="btn_menu" class="btn_menu_container">
-			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
-		</div>
-		<div id="logo">
+		<div id="logo" class="flex-item">
+			<?php 
+				if(function_exists( 'the_custom_logo' )){
+				    the_custom_logo();
+				} ?>
 			<a href="<?php echo esc_url(home_url()); ?>"></a>
 		</div>
-		<div class="social_network">
-			<ul>
-				<li>
-					<a href="">
-						<div id="facebook" class="social_logos"></div>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<div id="twitter" class="social_logos"></div>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<div id="youtube" class="social_logos"></div>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<div id="instagram" class="social_logos"></div>
-					</a>
-				</li>
-			</ul>
+
+		<div id="btn_menu" class="flex-item btn_menu_container">
+			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
 		</div>
 	</header>
 	<!-- <nav class="main_navigation">
 		<?php //wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
 	</nav> -->
 		
-			
+	<main class="main_site_wrapper">

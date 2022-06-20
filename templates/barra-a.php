@@ -10,7 +10,7 @@
 							<?php the_post_thumbnail(); ?>
 						</a>
 						<figcaption class="barra_a_caption">
-							<h2 class="barra_a_h2">
+							<h2 class="barra_a_heading">
 								<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr($post->post_title); ?>">
 									<?php the_title(); ?>
 								</a>

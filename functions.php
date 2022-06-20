@@ -33,7 +33,7 @@
 		wp_register_script('base-theme-archive', get_template_directory_uri().'/dist/archive.js', array(), '1.0.0');
 		wp_register_script('base-theme-single', get_template_directory_uri().'/dist/single.js', array(), '1.0.0');
 
-		if(is_front_page()){
+		if(is_front_page()||is_home()){
 			wp_enqueue_style('base-theme-home-style', get_template_directory_uri().'/dist/home.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-home');
 		}elseif(is_author()){
@@ -108,6 +108,15 @@
 			add_theme_support( 'align-wide' );
 			add_theme_support('editor-styles');
 			add_theme_support( 'wp-block-styles' );
+
+			$defults = array(
+				'height'=>64,
+				'width'=>64,
+				'flex-height'=>true,
+				'flex-width'=>true,
+				'unlink-homepage-logo'=>true
+			);
+			add_theme_support( 'custom-logo', $defults);
 			add_editor_style( 'style-editor.css' );
 
 	    /*add_theme_support( 'editor-color-palette', 
@@ -236,3 +245,43 @@
 		    'title' => $attachment->post_title
 		);
 	}
+
+	// --------- CUSTOMIZATION OPTIONS --------------
+
+ function bt_customization($wp_customize){
+
+ 	// Header & Footer Background Color.
+ 	$wp_customize->add_setting(
+ 		'header_footer_background_color',
+ 		array(
+ 			'default'           => '#ffffff',
+ 			'sanitize_callback' => 'sanitize_hex_color',
+ 			'transport'         => 'postMessage',
+ 		)
+ 	);
+
+ 	$wp_customize->add_control(
+ 		new WP_Customize_Color_Control(
+ 			$wp_customize,
+ 			'header_footer_background_color',
+ 			array(
+ 				'label'   => 'Header & Footer Background Color',
+ 				'section' => 'colors',
+ 				'settings' => 'header_footer_background_color'
+ 			)
+ 		)
+ 	);
+
+ }
+ add_action('customize_register', 'bt_customization');
+
+	function bt_customize_css(){ ?>
+
+ 		<style>
+			header, footer{background-color:<?php echo get_theme_mod('header_footer_background_color', '#000000'); ?>;}
+		</style>
+
+<?php 
+	} //END FUNCTION CUSTOMIZE CSS
+
+	add_action('wp_head', 'bt_customize_css');

@@ -1,1 +1,5 @@
-.sidebar{border:1px solid magenta;}
+.sidebar{background-color: lightcoral;padding: 20px 8px; }
+.sidebar_heading{font-size: 1.5em;font-weight: 500;margin-bottom: 24px;}
+.sidebar_fig{text-align:center;}
+.sidebar_figcaption{margin-top: 12px;}
+.sidebar_caption_title{text-align:left;font-size: 1.1em;font-weight: 500;line-height:1.6;}
