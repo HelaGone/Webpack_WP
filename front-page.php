@@ -10,7 +10,4 @@
 
 <?php get_sidebar(); ?>
 
-<?php //get_template_part('templates/barra', 'b'); ?>
-<?php //get_template_part('templates/barra', 'c'); ?>
-
 <?php get_footer(); ?>

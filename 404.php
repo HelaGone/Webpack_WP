@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<!-- Insert content here -->
+<h1 class="main_heading">404 page</h1>
 
 <?php get_sidebar(); ?>
 

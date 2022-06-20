@@ -4,11 +4,10 @@
 	<title><?php wp_title(); ?></title>
 	<link rel="shortcut icon" href="<?php echo THEMEPATH; ?>images/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1, height=device-height">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, height=device-height">
 	<meta name="HandheldFriendly" content="true"/>
 	<meta http-equiv="cleartype" content="on"/>
 	<meta name="theme-color" content="#000"/>
-	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<?php wp_head(); ?>
 	<script>
 		WebFontConfig = {
@@ -33,9 +32,7 @@
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
 		<div id="btn_menu" class="btn_menu_container">
-			<div class="bar1"></div>
-			<div class="bar2"></div>
-			<div class="bar3"></div>
+			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
 		</div>
 		<div id="logo">
 			<a href="<?php echo esc_url(home_url()); ?>"></a>
