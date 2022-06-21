@@ -1,42 +1,42 @@
 self.__precacheManifest = [
   {
-    "revision": "f4521e9ab4942545d6c2",
+    "revision": "1de0e08ddf24434aae9e",
     "url": "archive.css"
   },
   {
-    "revision": "f4521e9ab4942545d6c2",
+    "revision": "1de0e08ddf24434aae9e",
     "url": "archive.js"
   },
   {
-    "revision": "52727175d05f38908d61",
+    "revision": "b8ddea28e6cccbdd3ec7",
     "url": "author.css"
   },
   {
-    "revision": "52727175d05f38908d61",
+    "revision": "b8ddea28e6cccbdd3ec7",
     "url": "author.js"
   },
   {
-    "revision": "a6708fab02a6f8aac0c8",
+    "revision": "c62f078b85c3b4796da0",
     "url": "category.css"
   },
   {
-    "revision": "a6708fab02a6f8aac0c8",
+    "revision": "c62f078b85c3b4796da0",
     "url": "category.js"
   },
   {
-    "revision": "c76059cff6ce6f424a67",
+    "revision": "39127bb3301367411ee8",
     "url": "home.css"
   },
   {
-    "revision": "c76059cff6ce6f424a67",
+    "revision": "39127bb3301367411ee8",
     "url": "home.js"
   },
   {
-    "revision": "84d6986151039c580be8",
+    "revision": "44ded9497ee7e4629c3e",
     "url": "image.css"
   },
   {
-    "revision": "84d6986151039c580be8",
+    "revision": "44ded9497ee7e4629c3e",
     "url": "image.js"
   },
   {
@@ -56,40 +56,32 @@ self.__precacheManifest = [
     "url": "not_found.js"
   },
   {
-    "revision": "a70eda268f5e4ca8ac3c",
+    "revision": "356d73104a221834b215",
     "url": "page.css"
   },
   {
-    "revision": "a70eda268f5e4ca8ac3c",
+    "revision": "356d73104a221834b215",
     "url": "page.js"
   },
   {
-    "revision": "96116462a025859f52d7",
+    "revision": "5d7a54f4eb42b7141e6d",
     "url": "single.css"
   },
   {
-    "revision": "96116462a025859f52d7",
+    "revision": "5d7a54f4eb42b7141e6d",
     "url": "single.js"
   },
   {
-    "revision": "9fbb3214067e063f2619",
+    "revision": "8f9d2ec6d93150984f5c",
     "url": "tag.css"
   },
   {
-    "revision": "9fbb3214067e063f2619",
+    "revision": "8f9d2ec6d93150984f5c",
     "url": "tag.js"
-  },
-  {
-    "revision": "029b2f27ba4dda5f9ae354dd6280ec68",
-    "url": "./fonts/Relative-12pitch.woff"
   },
   {
     "revision": "0d69ddbb10e58b3a3b893a851f11e201",
     "url": "./fonts/Relative-12pitch.eot"
-  },
-  {
-    "revision": "a0a775248d6dcf30665dd536209659a2",
-    "url": "./fonts/BebasNeue Bold.eot"
   },
   {
     "revision": "297320392556cd676cd5054b7b8d11b1",
@@ -100,19 +92,27 @@ self.__precacheManifest = [
     "url": "./fonts/Relative-Bold.woff"
   },
   {
-    "revision": "4318087f06d228c6ffdeb3f14b263cfa",
-    "url": "./fonts/Relative-Bold.eot"
+    "revision": "568caa76ee41cbb450d51d07dc0faae4",
+    "url": "./fonts/Relative-Bold.ttf"
   },
   {
-    "revision": "6d11b2df604c6f37407ce25758d7ef1f",
-    "url": "./fonts/BebasNeue Bold.woff"
+    "revision": "a0a775248d6dcf30665dd536209659a2",
+    "url": "./fonts/BebasNeue Bold.eot"
+  },
+  {
+    "revision": "029b2f27ba4dda5f9ae354dd6280ec68",
+    "url": "./fonts/Relative-12pitch.woff"
   },
   {
     "revision": "2c3de56bbd25b30ba119c58ff5d9a88e",
     "url": "./fonts/BebasNeue Bold.ttf"
   },
   {
-    "revision": "568caa76ee41cbb450d51d07dc0faae4",
-    "url": "./fonts/Relative-Bold.ttf"
+    "revision": "4318087f06d228c6ffdeb3f14b263cfa",
+    "url": "./fonts/Relative-Bold.eot"
+  },
+  {
+    "revision": "6d11b2df604c6f37407ce25758d7ef1f",
+    "url": "./fonts/BebasNeue Bold.woff"
   }
 ];

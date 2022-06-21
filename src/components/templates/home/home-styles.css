@@ -1,1 +1,13 @@
-.home_section{position: relative;margin-bottom: 48px;}
+.home_section{
+	position: relative;margin-bottom: 48px;
+}
+.home_section .main_heading{padding-top: 12px;}
+
+@media only screen and (min-width: 720px){
+	.main_site_wrapper{display: grid;grid-template-columns: 1fr minmax(200px, 320px);grid-column-gap: 20px;}
+	.home_section .posts_pool{grid-template-columns: 1fr;grid-row-gap: 30px;}
+}
+
+@media only screen and (min-width:980px){
+	.home_section .posts_pool{grid-template-columns: repeat(2, 1fr);}
+}

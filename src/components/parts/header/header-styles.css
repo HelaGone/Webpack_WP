@@ -14,14 +14,17 @@
 .custom-logo-link img{width:100%;height:auto;}
 .custom-logo-link a{position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
 
-
-/*Main Navigation*/
-.menu-main-menu{width:0;border:1px solid blue;position: relative;}
-.main_navigation div{position: absolute;right: 0;top:40px;}
-.main_navigation div ul.menu li{padding:8px 24px;border:1px solid cyan;margin-bottom:8px;}
-
+/*----------- NAVIGATION -------------*/
 .btn_menu_container{display: inline-block;cursor: pointer;padding:20px 0px;justify-self: end;}
-.bar1, .bar2, .bar3 {width: 35px;height: 5px;background-color: #333;margin: 6px 0;transition: 0.4s;}
-.change .bar1 {-webkit-transform: rotate(-45deg) translate(-9px, 6px);transform: rotate(-45deg) translate(-9px, 6px);}
-.change .bar2 {opacity: 0;}
-.change .bar3 {-webkit-transform: rotate(45deg) translate(-8px, -8px);transform: rotate(45deg) translate(-8px, -8px);}
+.logo_menu{
+	margin-bottom: 60px;border-bottom: 2px solid #242424;padding-bottom: 10px;
+	display: flex;justify-content: space-between;align-items: center;
+}
+.logo_menu .custom-logo-link{max-width: 200px;height:auto;}
+.main_navigation{
+    position: fixed;top: 0;right: 0;bottom: 0;
+    z-index: 3;width: 0;background-color: white;padding:0;overflow: hidden;transition: width 0.3s;
+}
+.menu ul{text-align:right;}
+.menu ul li{margin-bottom: 12px;padding-bottom: 12px;border-bottom: 1px solid #242424;}
+.open_nav{width:75%;padding: 12px;}

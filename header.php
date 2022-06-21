@@ -43,8 +43,20 @@
 			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
 		</div>
 	</header>
-	<!-- <nav class="main_navigation">
-		<?php //wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
-	</nav> -->
-		
+
+	<!-- Navigation -->
+	<nav id="main-nav" class="main_navigation">
+		<div class="logo_menu">
+			<?php 
+				if(function_exists( 'the_custom_logo' )){
+				    the_custom_logo();
+				} ?>
+			<div id="btn_close_menu" class="btn_menu_container">
+				<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"/></svg>
+			</div>
+		</div>
+		<?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
+	</nav>
+	
+	<!-- MAIN -->
 	<main class="main_site_wrapper">
