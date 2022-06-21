@@ -47,3 +47,18 @@ a:hover{color:#aaa;}
 
 .social_network{padding: 24px 0;}
 .social_logos{width:30px; height: 30px; border:1px dotted cyan;}
+
+/*BASIC FIGURES*/
+.image_frame{position: relative;aspect-ratio: 16 / 9;}
+.image_frame img{width: 100%;height:auto;}
+.image_frame a{position: absolute;left:0;top: 0;right:0;bottom: -1px;}
+
+.generic_fig{background-color: #dfeefd; border-radius: 4px;overflow: hidden;max-width: 420px;}
+.generic_figcaption{padding:12px}
+.generic_fig_heading{line-height:1.4;font-size: 1.1em;}
+
+/*BASIC CONTAINER*/
+.posts_pool{display:grid;grid-template-columns: repeat(2, 1fr);grid-column-gap: 8px;grid-row-gap: 8px;}
+
+/*BASIC HEADINGS*/
+.main_heading{font-size: 2em;font-weight: 700;line-height: 1.2;margin-bottom: 24px;}

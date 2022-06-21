@@ -153,7 +153,7 @@
 	*/
 	if ( function_exists('add_image_size') ){
 		// add_image_size( 'poster_big', 570, 380, true );
-		// add_image_size( 'poster', 300, 200, true );
+		add_image_size( 'square_ad', 300, 250, true );
 	}
 
 // POST TYPES, METABOXES, TAXONOMIES AND CUSTOM PAGES ////////////////////////////////
