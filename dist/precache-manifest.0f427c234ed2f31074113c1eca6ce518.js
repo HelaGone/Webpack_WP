@@ -1,82 +1,82 @@
 self.__precacheManifest = [
   {
-    "revision": "9066b2929d02ad6f2166",
+    "revision": "a7717d5d5f1c6992f6b1",
     "url": "automain.css"
   },
   {
-    "revision": "9066b2929d02ad6f2166",
+    "revision": "a7717d5d5f1c6992f6b1",
     "url": "automain.js"
   },
   {
-    "revision": "801ee3d5b5034b83104d",
+    "revision": "1122dcf15a6c45b853cd",
     "url": "autohome.css"
   },
   {
-    "revision": "801ee3d5b5034b83104d",
+    "revision": "1122dcf15a6c45b853cd",
     "url": "autohome.js"
   },
   {
-    "revision": "f99e05e45d8ab8844aee",
+    "revision": "6e914e71875ab5af3a40",
     "url": "autosingle.css"
   },
   {
-    "revision": "f99e05e45d8ab8844aee",
+    "revision": "6e914e71875ab5af3a40",
     "url": "autosingle.js"
   },
   {
-    "revision": "8400631bea3af8f48da9",
+    "revision": "a1d18aa7b1266ec8e343",
     "url": "autoarchive.css"
   },
   {
-    "revision": "8400631bea3af8f48da9",
+    "revision": "a1d18aa7b1266ec8e343",
     "url": "autoarchive.js"
   },
   {
-    "revision": "5a6d98cb81776dbe79db",
+    "revision": "26bcd70b347f6f5f7bd6",
     "url": "autocategory.css"
   },
   {
-    "revision": "5a6d98cb81776dbe79db",
+    "revision": "26bcd70b347f6f5f7bd6",
     "url": "autocategory.js"
   },
   {
-    "revision": "50f320ad13323cbd6192",
+    "revision": "c0683d823d8dcb786e37",
     "url": "autoauthor.css"
   },
   {
-    "revision": "50f320ad13323cbd6192",
+    "revision": "c0683d823d8dcb786e37",
     "url": "autoauthor.js"
   },
   {
-    "revision": "0a332cdef446ae7d3050",
+    "revision": "59dd48957edc04bfbd4b",
     "url": "autoimage.css"
   },
   {
-    "revision": "0a332cdef446ae7d3050",
+    "revision": "59dd48957edc04bfbd4b",
     "url": "autoimage.js"
   },
   {
-    "revision": "3415c391232224006ec2",
+    "revision": "afee3ffa00d988d69102",
     "url": "autotag.css"
   },
   {
-    "revision": "3415c391232224006ec2",
+    "revision": "afee3ffa00d988d69102",
     "url": "autotag.js"
   },
   {
-    "revision": "e1b3c59719c5a1494fc2",
+    "revision": "3d9fff240206520af27d",
     "url": "autopage.css"
   },
   {
-    "revision": "e1b3c59719c5a1494fc2",
+    "revision": "3d9fff240206520af27d",
     "url": "autopage.js"
   },
   {
-    "revision": "50eafd159e5ac168378d",
+    "revision": "6d72fb285ed81b9b1463",
     "url": "autonot_found.css"
   },
   {
-    "revision": "50eafd159e5ac168378d",
+    "revision": "6d72fb285ed81b9b1463",
     "url": "autonot_found.js"
   },
   {
