@@ -9,14 +9,16 @@
 	<meta http-equiv="cleartype" content="on"/>
 	<meta name="theme-color" content="#000"/>
 	<?php wp_head(); ?>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
 	<script>
 		WebFontConfig = {
 			google:{
 				families: [
-					'Roboto:300,400,500,700',
-					'Roboto+Condensed',
-					'Teko:300,400,500,600,700',
-					'Source+Sans+Pro:300,400,600,700,900'
+					'Kaisei+Opti:400,500,700',
+					'Manrope:400,500,800',
+					// 'Lexend:300,400,500',
 				]
 			}
 		};
@@ -31,16 +33,15 @@
 </head>
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
+		<div id="btn_menu" class="flex-item btn_menu_container">
+			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
+		</div>
 		<div id="logo" class="flex-item">
 			<?php 
 				if(function_exists( 'the_custom_logo' )){
 				    the_custom_logo();
 				} ?>
 			<a href="<?php echo esc_url(home_url()); ?>"></a>
-		</div>
-
-		<div id="btn_menu" class="flex-item btn_menu_container">
-			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
 		</div>
 	</header>
 

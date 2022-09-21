@@ -1,3 +1,9 @@
+:root{
+	--dark: #000000;
+	--neutro: #949aa4;
+	--light:#f5f6f7;
+	--lighter: #ffffff;
+}
 @font-face {
 	font-family:'Relative_12';
 	src:url('../../fonts/Relative-12pitch.eot');
@@ -21,9 +27,9 @@
 	font-weight:normal;
 	font-style:normal;
 }
-body{background-color:#f9f9f9;font-family: 'Source Sans Pro';}
+body{background-color:var(--lighter);font-family: 'Manrope', sans-serif;font-weight: 500;}
 a{color:inherit;text-decoration:none;}
-a:hover{color:#aaa;}
+a:hover{color:var(--light);}
 
 .clearfix:before, .clearfix:after {content:"";display:table;}
 .clearfix:after {clear:both;}
@@ -35,10 +41,10 @@ a:hover{color:#aaa;}
 .hidden{display:none;}
 .container {width:100%;max-width:1280px;margin:0 auto;position:relative;}
 
-.white_parr{color:#efefef;}
-.black_parr{color:#222;}
+.white_parr{color:var(--lighter);}
+.black_parr{color:var(--dark);}
 
-.main_site_wrapper{padding-top: 114px;padding-left: 8px;padding-right: 8px;}
+.main_site_wrapper{padding-top: 114px;padding-left: 0;padding-right: 0;}
 
 #facebook{background-image: url(../img/flogo-RGB-HEX-Blk-144.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
 #twitter{background-image: url(../img/Twitter_Social_Icon_Circle_Color.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
@@ -53,7 +59,7 @@ a:hover{color:#aaa;}
 .image_frame img{width: 100%;height:auto;}
 .image_frame a{position: absolute;left:0;top: 0;right:0;bottom: -1px;}
 
-.generic_fig{background-color: #dfeefd; border-radius: 4px;overflow: hidden;max-width: 420px;}
+.generic_fig{background-color: var(--light); border-radius: 4px;overflow: hidden;max-width: 420px;}
 .generic_figcaption{padding:12px}
 .generic_fig_heading{line-height:1.4;font-size: 1.1em;}
 
@@ -61,4 +67,5 @@ a:hover{color:#aaa;}
 .posts_pool{display:grid;grid-template-columns: repeat(2, 1fr);grid-column-gap: 8px;grid-row-gap: 8px;}
 
 /*BASIC HEADINGS*/
-.main_heading{font-size: 2em;font-weight: 700;line-height: 1.2;margin-bottom: 24px;}
+.main_heading{font-size: 30px;font-weight: 700;line-height: 40px;margin-bottom: 24px;letter-spacing: 0.25px;font-family: 'Kaisei Opti', serif;}
+.subheading{font-size: 1em;line-height: 24px; font-weight: 500;color:var(--neutro)}

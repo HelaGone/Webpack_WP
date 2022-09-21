@@ -1,12 +1,12 @@
 #main_site_header{
 	padding: 0 12px;
-	/*display:flex;justify-content: space-between;gap: 12px;align-items:center;*/
 	display:grid;grid-template-columns: minmax(64px, 250px) 1fr;place-items: center;
 	position:fixed;top: 0;left: 0;right: 0;z-index: 3;min-height: 64px;
 	box-shadow: 1px 4px 12px rgba(0, 0, 0, .6);
 }
 #main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
+#btn_menu svg path{fill:#}
 
 #logo, .custom-logo-link{position: relative;}
 #logo{justify-self: start;}

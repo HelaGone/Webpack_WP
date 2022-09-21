@@ -1,1 +1,11 @@
-#single_section h2{color:orange;}
+.single_article{padding:0 8px;}
+.article_cat{background-color: var(--dark);color:var(--light);padding:4px 8px;border-radius: 4px;font-size: 1em;font-weight: 800;}
+.main_heading{margin-top:12px;}
+.article_author{margin:24px 0;}
+.article_figure{margin-bottom: 34px;}
+.post_date{color: var(--neutro);}
+.article_content{font-size: 1.125em;line-height: 24px;margin:24px 0;}
+.article_content p{margin-bottom: 24px;}
+.article_content img{max-width: 100%;height: auto;margin-bottom:24px;}
+.wp-block-embed{margin-bottom:24px;}
+.wp-block-embed figcaption{color: var(--neutro);font-size: 14px;font-weight: 400;}

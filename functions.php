@@ -293,3 +293,9 @@
 	    wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
 	} 
 	add_action( 'wp_enqueue_scripts', 'bt_remove_block_library', 100 );
+
+	function debug($var){
+		echo '<pre style="color:tomato;">';
+			print_r($var);
+		echo '</pre>';
+	}
