@@ -6,8 +6,6 @@
 }
 #main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
-#btn_menu svg path{fill:#}
-
 #logo, .custom-logo-link{position: relative;}
 #logo{justify-self: start;}
 .custom-logo-link{display: block;}
