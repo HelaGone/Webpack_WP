@@ -276,11 +276,10 @@
  add_action('customize_register', 'bt_customization');
 
 	function bt_customize_css(){ ?>
-
  		<style>
-			header, footer{background-color:<?php echo get_theme_mod('header_footer_background_color', '#000000'); ?>;}
+			footer{background-color:<?php echo get_theme_mod('header_footer_background_color', '#000000'); ?>;}
+			#btn_menu svg path{fill:<?php echo get_theme_mod('header_footer_background_color', '#000000'); ?>;}
 		</style>
-
 <?php 
 	} //END FUNCTION CUSTOMIZE CSS
 
