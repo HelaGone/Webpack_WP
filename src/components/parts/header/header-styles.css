@@ -20,11 +20,11 @@
 	margin-bottom: 60px;border-bottom: 2px solid #242424;padding-bottom: 10px;
 	display: flex;justify-content: space-between;align-items: center;
 }
-.logo_menu .custom-logo-link{max-width: 200px;height:auto;}
+.logo_menu .custom-logo-link{max-width: 250px;height:auto;}
 .main_navigation{
     position: fixed;top: 0;right: 0;bottom: 0;
     z-index: 3;width: 0;background-color: white;padding:0;overflow: hidden;transition: width 0.3s;
 }
-.menu ul{text-align:right;}
-.menu ul li{margin-bottom: 12px;padding-bottom: 12px;border-bottom: 1px solid #242424;}
+.menu {text-align:right;}
+.menu li{margin-bottom: 12px;padding-bottom: 12px;border-bottom: 1px solid #242424;}
 .open_nav{width:75%;padding: 12px;}
