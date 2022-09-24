@@ -302,7 +302,8 @@
 			footer{background-color:<?php echo $themeColor; ?>;}
 			#btn_menu svg path, 
 			#btn_close_menu svg path{fill:<?php echo $themeColor; ?>;}
-			.generic_cat span{background-color:<?php echo $themeColor; ?>;color:<?php echo $categoryColor; ?>;}
+			.generic_cat span, .article_cat{background-color:<?php echo $themeColor; ?>;color:<?php echo $categoryColor; ?>;}
+			.social_icon path, .social_icon svg{stroke:<?php echo $themeColor; ?>;}
 		</style>
 <?php 
 	} //END FUNCTION CUSTOMIZE CSS

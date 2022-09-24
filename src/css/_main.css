@@ -68,7 +68,6 @@ a:hover{color:var(--light);}
 .main_heading{
 	font-size: 30px;font-weight: 700;line-height: 40px;margin-bottom: 24px;letter-spacing: 0.25px;font-family: 'Kaisei Opti', serif;
 }
-.subheading{font-size: 1em;line-height: 24px; font-weight: 500;color:var(--neutro)}
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 540px){
