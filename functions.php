@@ -152,7 +152,7 @@
 	 * Define custom image sizes for wordpress media images
 	*/
 	if ( function_exists('add_image_size') ){
-		// add_image_size( 'poster_big', 570, 380, true );
+		add_image_size( 'generic_fig', 420, 236, true );
 		add_image_size( 'square_ad', 300, 250, true );
 	}
 
@@ -175,7 +175,7 @@
 
 	add_action( 'pre_get_posts', function($query){
 		if ( $query->is_main_query() and ! is_admin() ) {
-			// $query->set( 'cat', '123' );
+			$query->set( 'posts_per_page', 12);
 		}
 		return $query;
 	});

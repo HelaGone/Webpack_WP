@@ -1,13 +1,17 @@
 .home_section{
 	position: relative;margin-bottom: 48px;
 }
-.home_section .main_heading{padding-top: 12px;}
+.home_section .main_heading{padding-top: 12px;text-align: center;}
+.posts_pool{padding:20px 8px;}
 
-@media only screen and (min-width: 720px){
-	.main_site_wrapper{display: grid;grid-template-columns: 1fr minmax(200px, 320px);grid-column-gap: 20px;}
-	.home_section .posts_pool{grid-template-columns: 1fr;grid-row-gap: 30px;}
+@media only screen and (min-width: 540px){
+	.posts_pool{display: grid;grid-template-columns: repeat(2, 1fr);column-gap: 8px;}
 }
 
-@media only screen and (min-width:980px){
-	.home_section .posts_pool{grid-template-columns: repeat(2, 1fr);}
+@media only screen and (min-width:1024px){
+	.posts_pool{grid-template-columns: repeat(3, 1fr);}
+}
+
+@media only screen and (min-width:1440px){
+	.posts_pool{grid-template-columns: repeat(4, 1fr);column-gap: 16px;padding-left: 16px;padding-right: 16px;}
 }

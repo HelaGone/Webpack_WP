@@ -8,9 +8,9 @@
 #main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
 #logo, .custom-logo-link{position: relative;}
-#logo{justify-self: end;}
+#logo{justify-self: center;}
 .custom-logo-link{display: block;}
-.custom-logo-link img{width:100%;height:auto;}
+.custom-logo-link img{width:100%;height:auto;max-width: 276px;}
 .custom-logo-link a{position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
 
 /*----------- NAVIGATION -------------*/
