@@ -13,14 +13,14 @@ a:hover{color:var(--light);}
 .clearfix:after {clear:both;}
 .clearfix {zoom:1;}
 
-.first{margin-left:0;padding-left:0;}
-.last{margin-right:0;padding-right:0;}
+/* .first{margin-left:0;padding-left:0;} */
+/* .last{margin-right:0;padding-right:0;} */
 
-.hidden{display:none;}
-.container {width:100%;max-width:1280px;margin:0 auto;position:relative;}
+/* .hidden{display:none;} */
+/* .container {width:100%;max-width:1280px;margin:0 auto;position:relative;} */
 
 .white_parr{color:var(--lighter);}
-.black_parr{color:var(--dark);}
+/* .black_parr{color:var(--dark);} */
 
 .main_site_wrapper{padding-top: 114px;padding-left: 0;padding-right: 0;}
 
@@ -29,8 +29,8 @@ a:hover{color:var(--light);}
 #instagram{background-image: url(../img/glyph-logo_May2016.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
 #youtube{background-image: url(../img/youtube_social_circle_dark.png);background-size: contain;background-position: center;background-repeat: no-repeat; }
 
-.social_network{padding: 24px 0;}
-.social_logos{width:30px; height: 30px; border:1px dotted cyan;}
+/* .social_network{padding: 24px 0;} */
+/* .social_logos{width:30px; height: 30px; border:1px dotted cyan;} */
 
 /*BASIC FIGURES*/
 .image_frame{position: relative;aspect-ratio: 16 / 9;}
