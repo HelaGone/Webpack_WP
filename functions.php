@@ -252,33 +252,57 @@
 
  	// Header & Footer Background Color.
  	$wp_customize->add_setting(
- 		'header_footer_background_color',
+ 		'theme_color',
  		array(
  			'default'           => '#ffffff',
  			'sanitize_callback' => 'sanitize_hex_color',
  			'transport'         => 'postMessage',
  		)
  	);
+	 $wp_customize->add_setting(
+		'category_color',
+		array(
+			'default'           => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'postMessage',
+		)
+	);
 
  	$wp_customize->add_control(
  		new WP_Customize_Color_Control(
  			$wp_customize,
- 			'header_footer_background_color',
+ 			'theme_color',
  			array(
- 				'label'   => 'Header & Footer Background Color',
+ 				'label'   => 'Theme main color',
  				'section' => 'colors',
- 				'settings' => 'header_footer_background_color'
+ 				'settings' => 'theme_color'
  			)
  		)
  	);
+	 $wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'category_color',
+			array(
+				'label'   => 'Category text color',
+				'section' => 'colors',
+				'settings' => 'category_color'
+			)
+		)
+	);
 
  }
  add_action('customize_register', 'bt_customization');
 
-	function bt_customize_css(){ ?>
+	function bt_customize_css(){ 
+		$themeColor = get_theme_mod('theme_color', '#000000');
+		$categoryColor = get_theme_mod('category_color', '#000000');
+		?>
  		<style>
-			footer{background-color:<?php echo get_theme_mod('header_footer_background_color', '#000000'); ?>;}
-			#btn_menu svg path{fill:<?php echo get_theme_mod('header_footer_background_color', '#000000'); ?>;}
+			footer{background-color:<?php echo $themeColor; ?>;}
+			#btn_menu svg path, 
+			#btn_close_menu svg path{fill:<?php echo $themeColor; ?>;}
+			.generic_cat span{background-color:<?php echo $themeColor; ?>;color:<?php echo $categoryColor; ?>;}
 		</style>
 <?php 
 	} //END FUNCTION CUSTOMIZE CSS

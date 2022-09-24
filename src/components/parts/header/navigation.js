@@ -5,13 +5,13 @@ $(document).ready(function(){
 	let btnCloseMenu = document.getElementById('btn_close_menu');
 	if(btnMenu){
 		btnMenu.addEventListener('click', ()=>{
-			console.log("open");
+			// console.log("open");
 			document.getElementById('main-nav').classList.toggle('open_nav');
 		});
 	}
 	if(btnCloseMenu){
 		btnCloseMenu.addEventListener('click', (e) => {
-			console.log("close");
+			// console.log("close");
 			document.getElementById('main-nav').classList.toggle('open_nav');
 		});
 	}
