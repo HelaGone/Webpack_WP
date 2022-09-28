@@ -31,7 +31,11 @@
 								<?php echo esc_html($catName); ?>
 							</a>
 						</span>
-						<h3><?php the_title(); ?></h3>
+						<h3>
+							<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr($post->post_title); ?>">
+								<?php the_title(); ?>
+							</a>
+						</h3>
 						<?php the_excerpt(); ?>
 				</div>
 		<?php 

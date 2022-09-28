@@ -6,7 +6,7 @@
 			<?php 
 				if(have_posts()):
 					while(have_posts()):
-						the_post(); 
+						the_post();
 						$categories = get_the_category($post->ID);
 						$cat = is_array($categories) ? $categories[0] : "Noticias";
 						?>
