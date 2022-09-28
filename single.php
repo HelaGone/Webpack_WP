@@ -6,7 +6,8 @@
 			the_post(); 
 			$category = get_categories()[0];
 			$catName = $category->name;
-			$catLink = get_category_link($category->term_id);
+			$catId = $category->term_id;
+			$catLink = get_category_link($catId);
 			// debug($post);
 			$author = get_the_author_meta("user_nicename");
 			?>
@@ -34,6 +35,9 @@
 				</time>
 				<div class="article_content">
 					<?php the_content(); ?>
+					<ul class="article_tag_list">
+						<?php echo bt_print_the_terms($post->ID, 'post_tag'); ?>
+					</ul>
 				</div>
 			</article>
 			<section class="social_networks">
@@ -59,9 +63,8 @@
 				</ul>
 			</section>
 <?php
+		get_sidebar(null, array("term" => $catName));
 		endwhile;
 	endif; ?>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

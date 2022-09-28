@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<section class="home_section">
+	<section class="archive_section">
 		<div class="inner_wrapper">
 			<h1 class="main_heading">
 				<?php echo get_bloginfo('name'); ?>
@@ -15,11 +15,21 @@
 							?>
 							<figure class="generic_fig">
 								<div class="generic_cat">
-									<span><?php echo esc_html($cat->name); ?></span>
+									<span>
+										<a 
+											href="<?php echo get_category_link($cat->term_id); ?>" 
+											title="<?php echo esc_attr($cat->name); ?>">
+											<?php echo esc_html($cat->name); ?>
+										</a>
+									</span>
 								</div>
 								<div class="image_frame">
 									<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr($post->post_title); ?>">
-										<?php echo has_post_thumbnail() ? the_post_thumbnail('generic_fig') : '<img src="'.THEMEPATH.'screenshot.png" width="420" height="236" alt="default_thumb">'; ?>
+										<?php 
+											echo has_post_thumbnail() ? 
+											the_post_thumbnail('generic_fig') : 
+											'<img src="'.THEMEPATH.'screenshot.png" width="420" height="236" alt="default_thumb">'; 
+										?>
 									</a>
 								</div>
 								<figcaption class="generic_figcaption">

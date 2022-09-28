@@ -8,7 +8,7 @@
 body{background-color:var(--lighter);font-family: 'Manrope', sans-serif;font-weight: 500;}
 h1, h2, h3{font-family: 'Kaisei Decol', serif;}
 a{color:inherit;text-decoration:none;}
-a:hover{color:var(--light);}
+a:hover{color:var(--neutro);}
 
 .clearfix:before, .clearfix:after {content:"";display:table;}
 .clearfix:after {clear:both;}

@@ -39,12 +39,6 @@
 		}elseif(is_author()){
 			wp_enqueue_style('base-theme-author-style', get_template_directory_uri().'/dist/author.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-author');
-		}elseif(is_tag()){
-			wp_enqueue_style('base-theme-tag-style', get_template_directory_uri().'/dist/tag.css', array(), '1.0.0.' );
-			wp_enqueue_script('base-theme-tag');
-		}elseif(is_category()){
-			wp_enqueue_style('base-theme-category-style', get_template_directory_uri().'/dist/category.css', array(), '1.0.0.' );
-			wp_enqueue_script('base-theme-category');
 		}elseif(is_archive()){
 			wp_enqueue_style('base-theme-archive-style', get_template_directory_uri().'/dist/archive.css', array(), '1.0.0.' );
 			wp_enqueue_script('base-theme-archive');
@@ -212,9 +206,32 @@
 
 		if ( $terms and ! is_wp_error($terms) ){
 			$names = wp_list_pluck($terms ,'name');
-			echo implode(', ', $names);
+			foreach($terms as $key => $value){
+				$link = get_term_link($value->term_id);
+				echo '<li><a href="'.$link.'" title="'.$value->name.'">'.$value->name.'</a></li>';
+			}
 		}
 	}
+
+	/**
+	 * 
+	 */
+	function bt_theme_archive_title( $title ) {
+		if ( is_category() ) {
+			$title = single_cat_title( '', false );
+		} elseif ( is_tag() ) {
+			$title = single_tag_title( '', false );
+		} elseif ( is_author() ) {
+			$title = '<span class="vcard">' . get_the_author() . '</span>';
+		} elseif ( is_post_type_archive() ) {
+			$title = post_type_archive_title( '', false );
+		} elseif ( is_tax() ) {
+			$title = single_term_title( '', false );
+		}
+		return ucfirst($title);
+	}
+	
+	add_filter( 'get_the_archive_title', 'bt_theme_archive_title' );
 
 	/**
 	 * Regresa la url del attachment especificado
