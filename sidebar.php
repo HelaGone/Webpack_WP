@@ -1,17 +1,17 @@
 <?php 
-	debug($args);
-	$args = array(
+	$pArgs = array(
 		"post_type"=>"post",
 		"posts_per_page" => 4,
 		"post_status"=>"publish",
 		"orderby"=>"date",
 		"order"=>"DESC",
+		"post__not_in"=>[$args['not_in']],
 		"tax_query"=>array(
 			"taxonomy"=>"category",
 			"field"=>"slug",
 			"terms" => array($args['term'])
 		));
-	$related = new WP_Query($args);
+	$related = new WP_Query($pArgs);
 ?>
 <aside class="sidebar">
 	<h2 class="sidebar_heading">Recomendado para ti</h2>

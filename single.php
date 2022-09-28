@@ -63,7 +63,7 @@
 				</ul>
 			</section>
 <?php
-		get_sidebar(null, array("term" => $catName));
+		get_sidebar(null, array("term" => $catName, "not_in" => $post->ID));
 		endwhile;
 	endif; ?>
 
