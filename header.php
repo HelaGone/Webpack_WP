@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es_MX">
+<html lang="es">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="description" content="<?php echo get_bloginfo('description'); ?>">
@@ -13,7 +13,7 @@
 	<?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet"> -->
 	<script>
 		WebFontConfig = {
 			google:{
@@ -44,7 +44,7 @@
 					if(function_exists( 'the_custom_logo' )){
 							the_custom_logo();
 					} ?>
-				<a href="<?php echo esc_url(home_url()); ?>"></a>
+				<a href="<?php echo esc_url(home_url()); ?>" title="Navigate to home page"></a>
 			</div>
 		</div>
 	</header>
