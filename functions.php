@@ -53,9 +53,12 @@
 	});
 
 	function include_custom_jquery() {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' );
+		wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
 
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', array(), null, true);
+		wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.1.min.js', array(), null, true);
 		wp_enqueue_script('jquery');
 
 	}
@@ -102,6 +105,7 @@
 			add_theme_support( 'align-wide' );
 			add_theme_support('editor-styles');
 			add_theme_support( 'wp-block-styles' );
+			add_theme_support( 'title-tag' );
 
 			$defults = array(
 				'height'=>64,
@@ -326,14 +330,6 @@
 	} //END FUNCTION CUSTOMIZE CSS
 
 	add_action('wp_head', 'bt_customize_css');
-
-	//Remove Gutenberg Block Library CSS from loading on the frontend
-	function bt_remove_block_library(){
-	    wp_dequeue_style( 'wp-block-library' );
-	    wp_dequeue_style( 'wp-block-library-theme' );
-	    wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
-	} 
-	add_action( 'wp_enqueue_scripts', 'bt_remove_block_library', 100 );
 
 	function debug($var){
 		echo '<pre style="color:tomato;">';

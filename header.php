@@ -3,17 +3,18 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="description" content="<?php echo get_bloginfo('description'); ?>">
-	<title><?php wp_title(); ?></title>
-	<link rel="shortcut icon" href="<?php echo THEMEPATH; ?>images/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- <title><?php wp_title(); ?></title> -->
+	<?php $site_icon = get_site_icon_url(512, THEMEPATH.'images/favicon.ico'); ?>
+	<link rel="shortcut icon" href="<?php echo $site_icon; ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, height=device-height">
-	<meta name="HandheldFriendly" content="true"/>
-	<meta http-equiv="cleartype" content="on"/>
-	<meta name="theme-color" content="#000"/>
+	<meta name="HandheldFriendly" content="true">
+	<!-- This can be from theme customization -->
+	<?php $themeColor = get_theme_mod('theme_color', '#000000'); ?>
+	<meta name="theme-color" content="<?php echo $themeColor; ?>"> 
 	<?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet"> -->
 	<script>
 		WebFontConfig = {
 			google:{
