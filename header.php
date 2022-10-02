@@ -43,7 +43,7 @@
 			<div id="logo" class="flex-item">
 				<?php 
 					if(function_exists( 'the_custom_logo' )){
-							the_custom_logo();
+							(get_custom_logo()) ? the_custom_logo() : bloginfo('name');
 					} ?>
 				<a href="<?php echo esc_url(home_url()); ?>" title="Navigate to home page"></a>
 			</div>
