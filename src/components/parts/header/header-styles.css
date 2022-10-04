@@ -1,30 +1,33 @@
 #main_site_header{
 	padding: 0 12px;
-	/*display:flex;justify-content: space-between;gap: 12px;align-items:center;*/
-	display:grid;grid-template-columns: minmax(64px, 250px) 1fr;place-items: center;
 	position:fixed;top: 0;left: 0;right: 0;z-index: 3;min-height: 64px;
-	box-shadow: 1px 4px 12px rgba(0, 0, 0, .6);
+	box-shadow: 1px 4px 12px rgba(0, 0, 0, .6);background-color: var(--lighter);
 }
+#main_site_header .inner_wrapper{display:grid;grid-template-columns: minmax(48px, 60px) 1fr;place-items: center;}
 #main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
-
 #logo, .custom-logo-link{position: relative;}
-#logo{justify-self: start;}
+#logo{justify-self: center;font-size: 2em;font-weight: 700;}
 .custom-logo-link{display: block;}
-.custom-logo-link img{width:100%;height:auto;}
+.custom-logo-link img{width:100%;height:auto;max-width: 276px;}
 .custom-logo-link a{position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
 
 /*----------- NAVIGATION -------------*/
-.btn_menu_container{display: inline-block;cursor: pointer;padding:20px 0px;justify-self: end;}
+.btn_menu_container{display: inline-block;cursor: pointer;padding:20px 0px;justify-self: start;}
 .logo_menu{
 	margin-bottom: 60px;border-bottom: 2px solid #242424;padding-bottom: 10px;
 	display: flex;justify-content: space-between;align-items: center;
 }
 .logo_menu .custom-logo-link{max-width: 250px;height:auto;}
 .main_navigation{
-    position: fixed;top: 0;right: 0;bottom: 0;
-    z-index: 3;width: 0;background-color: white;padding:0;overflow: hidden;transition: width 0.3s;
+    position: fixed;top: 0;left: 0;bottom: 0;
+    z-index: 3;width: 0;background-color: white;padding:0;overflow: hidden;
+		transition: width 0.125s ease-out, padding 0.125s ease-in;
 }
-.menu {text-align:right;}
+.menu {text-align:left;}
 .menu li{margin-bottom: 12px;padding-bottom: 12px;border-bottom: 1px solid #242424;}
 .open_nav{width:75%;padding: 12px;}
+
+@media only screen and (min-width:720px){
+	.main_navigation{max-width: 420px;}
+}

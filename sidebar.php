@@ -1,22 +1,45 @@
+<?php 
+	$pArgs = array(
+		"post_type"=>"post",
+		"posts_per_page" => 4,
+		"post_status"=>"publish",
+		"orderby"=>"date",
+		"order"=>"DESC",
+		"post__not_in"=>[$args['not_in']],
+		"tax_query"=>array(
+			"taxonomy"=>"category",
+			"field"=>"slug",
+			"terms" => array($args['term'])
+		));
+	$related = new WP_Query($pArgs);
+?>
 <aside class="sidebar">
-	<h2 class="sidebar_heading">This is sidebar section</h2>
+	<h2 class="sidebar_heading">Recomendado para ti</h2>
 	<div class="sidebar_posts_pool">
 		<?php 
-			if(have_posts()):
-				while(have_posts()):
-					the_post();
-					setup_postdata($post); ?>
-					<figure class="sidebar_fig">
-						<div class="square_image_frame">
-							<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr($post->post_title); ?>">
-								<?php echo has_post_thumbnail() ? get_the_post_thumbnail($post->ID, 'square_ad') : '<img src="https://unsplash.it/300/250" alt="One Figure" width="300" height="250">'; ?>
+			if($related->have_posts()):
+				while($related->have_posts()):
+					$related->the_post();
+					setup_postdata($post);
+					$category = get_categories()[0];
+					$catName = $category->name;
+					$catLink = get_category_link($category->term_id);
+					?>
+					<div class="sidebar_fig">
+						<span class="article_cat">
+							<a href="<?php echo esc_url($catLink); ?>" title="<?php echo esc_attr($catName); ?>">
+								<?php echo esc_html($catName); ?>
 							</a>
-						</div>
-						<figcaption class="sidebar_figcaption">
-							<h3 class="sidebar_caption_title"><?php the_title(); ?></h3>
-						</figcaption>
-					</figure>
+						</span>
+						<h3>
+							<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr($post->post_title); ?>">
+								<?php the_title(); ?>
+							</a>
+						</h3>
+						<?php the_excerpt(); ?>
+				</div>
 		<?php 
+				wp_reset_postdata();
 				endwhile;
 			endif; ?>
 	</div>

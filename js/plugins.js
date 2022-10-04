@@ -115,3 +115,15 @@
 
 	// Works with either jQuery or Zepto
 })(window.jQuery || window.Zepto);
+
+// D3JS
+// let datos = [20, 30, 40, 50];
+// let info = d3
+// 	.select(#selector)
+// 	.selectAll('.selector')
+// 	.data(datos)
+// 	.enter()
+// 	.append("svg")
+// 	.attr("width", (d) => d)
+// 	.attr("height", (d)=>d)
+// 	.attr("fill", "#ff0000")

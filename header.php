@@ -1,22 +1,27 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php wp_title(); ?></title>
-	<link rel="shortcut icon" href="<?php echo THEMEPATH; ?>images/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="<?php echo get_bloginfo('description'); ?>">
+	<!-- <title><?php wp_title(); ?></title> -->
+	<?php $site_icon = get_site_icon_url(512, THEMEPATH.'images/favicon.ico'); ?>
+	<link rel="shortcut icon" href="<?php echo $site_icon; ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, height=device-height">
-	<meta name="HandheldFriendly" content="true"/>
-	<meta http-equiv="cleartype" content="on"/>
-	<meta name="theme-color" content="#000"/>
+	<meta name="HandheldFriendly" content="true">
+	<!-- This can be from theme customization -->
+	<?php $themeColor = get_theme_mod('theme_color', '#000000'); ?>
+	<meta name="theme-color" content="<?php echo $themeColor; ?>"> 
 	<?php wp_head(); ?>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script>
 		WebFontConfig = {
 			google:{
 				families: [
-					'Roboto:300,400,500,700',
-					'Roboto+Condensed',
-					'Teko:300,400,500,600,700',
-					'Source+Sans+Pro:300,400,600,700,900'
+					'Kaisei+Opti:400,500,700',
+					'Manrope:400,500,800',
+					// 'Lexend:300,400,500',
 				]
 			}
 		};
@@ -31,16 +36,17 @@
 </head>
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
-		<div id="logo" class="flex-item">
-			<?php 
-				if(function_exists( 'the_custom_logo' )){
-				    the_custom_logo();
-				} ?>
-			<a href="<?php echo esc_url(home_url()); ?>"></a>
-		</div>
-
-		<div id="btn_menu" class="flex-item btn_menu_container">
-			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
+		<div class="inner_wrapper">
+			<div id="btn_menu" class="flex-item btn_menu_container">
+				<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
+			</div>
+			<div id="logo" class="flex-item">
+				<?php 
+					if(function_exists( 'the_custom_logo' )){
+							(get_custom_logo()) ? the_custom_logo() : bloginfo('name');
+					} ?>
+				<a href="<?php echo esc_url(home_url()); ?>" title="Navigate to home page"></a>
+			</div>
 		</div>
 	</header>
 
