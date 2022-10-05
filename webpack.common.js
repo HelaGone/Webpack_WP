@@ -1,8 +1,10 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -46,47 +48,45 @@ module.exports = {
 			}
 		},
 		minimizer:[
-			new OptimizeCSSAssetsPlugin({}),
+			new CssMinimizerPlugin(),
 			new TerserPlugin({})
 		]
 	},
 	module: {
-		rules:[{
-			test: /\.js$/,
-			exclude: '/node_modules/',
-			use: {
-				loader: 'babel-loader',
-				options: {
-					presets: ['@babel/preset-env']
+		rules:[
+			{
+				test: /\.js$/,
+				exclude: '/node_modules/',
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
+				}
+			},
+			{
+				test: /\.css$/,
+				use: [MiniCssExtractPlugin.loader, "css-loader"]
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: './assets/[hash].[ext]'
+					}
+				}
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				use: {
+					loader: 'file-loader',
+					options:{
+						name: './fonts/[name].[ext]'
+					}
 				}
 			}
-		},
-		{
-			test: /\.css$/,
-			use:[
-				{
-					loader: MiniCssExtractPlugin.loader
-				},
-				'css-loader'
-			]
-		},
-		{
-			test: /\.(png|svg|jpg|jpeg|gif)$/,
-			use: {
-				loader: 'file-loader',
-				options: {
-					name: './assets/[hash].[ext]'
-				}
-			}
-		},{
-			test: /\.(woff|woff2|eot|ttf|otf)$/,
-			use: {
-				loader: 'file-loader',
-				options:{
-					name: './fonts/[name].[ext]'
-				}
-			}
-		}]
+		]
 	},
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
@@ -94,11 +94,12 @@ module.exports = {
 			filename: '[name].css',
 			chunkFilename: '[id].css'
 		}),
-		new WorkboxPlugin.GenerateSW({
+		new GenerateSW({
 			exclude: [/\.(?:png|jpg|jpeg|svg|gif)$/],
+			swDest: '../../../../sw.js',
 			runtimeCaching: [{
 				urlPattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
-				handler: 'cacheFirst',
+				handler: 'CacheFirst',
 				options: {
 					cacheName: 'cache-images',
 					expiration: {
