@@ -53,7 +53,7 @@ a:hover{color:var(--neutro);}
 .generic_fig{background-color: var(--lighter); max-width: 420px;margin-bottom: 32px;}
 .generic_cat{text-align: center;margin-bottom:12px;}
 .generic_cat span{
-	/*background-color: var(--dark);*/color: var(--lighter);border-radius: 4px;padding:4px 12px;display:inline-block;
+	color: var(--lighter);border-radius: 4px;padding:4px 12px;display:inline-block;
 	font-weight: 800;line-height: 16px;
 }
 .generic_fig .image_frame{border-radius: 4px;overflow: hidden;}

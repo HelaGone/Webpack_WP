@@ -9,11 +9,9 @@
 .sidebar_fig p{font-weight: 500;font-size: 1em;line-height: 24px;color: var(--neutro);}
 .sidebar_caption_title{text-align:left;font-size: 1.1em;font-weight: 500;line-height:1.6;}
 
+.article_cat{border-radius: 4px;padding:4px 12px;display:inline-block;font-weight: 800;line-height: 16px;}
+
 @media only screen and (min-width:590px){
 	.sidebar{max-width: 890px;margin:auto;}
 	.sidebar_posts_pool{display:grid;grid-template-columns: repeat(2, 1fr);grid-column-gap: 12px;}
 }
-
-/* @media only screen and (min-width:720px){
-	.sidebar_posts_pool{grid-template-columns: 1fr;}	
-} */

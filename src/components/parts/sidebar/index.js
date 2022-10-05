@@ -1,2 +1,2 @@
 import './sidebar-styles.css';
-import './sidebar-scripts';
+// import './sidebar-scripts';
