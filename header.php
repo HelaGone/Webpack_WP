@@ -33,43 +33,43 @@
 			s.parentNode.insertBefore(wf, s);
 		})(document);
 	</script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-SV5EVFJ1ZQ');
-	</script>
 </head>
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
 		<div class="inner_wrapper">
 			<div id="btn_menu" class="flex-item btn_menu_container">
-				<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
+				<?php 
+					echo has_nav_menu('bt-custom-menu') 
+						? '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>' 
+						: '';
+				?>
 			</div>
 			<div id="logo" class="flex-item">
-				<?php 
-					if(function_exists( 'the_custom_logo' )){
-							(get_custom_logo()) ? the_custom_logo() : bloginfo('name');
-					} ?>
-				<a href="<?php echo esc_url(home_url()); ?>" title="Navigate to home page"></a>
+				<a href="<?php echo esc_url(home_url()); ?>" title="Navigate to home page">
+					<?php 
+						if(function_exists( 'the_custom_logo' )){
+								(get_custom_logo()) ? the_custom_logo() : bloginfo('name');
+						} ?>
+				</a>
 			</div>
 		</div>
 	</header>
 
-	<!-- Navigation -->
-	<nav id="main-nav" class="main_navigation">
-		<div class="logo_menu">
-			<?php 
-				if(function_exists( 'the_custom_logo' )){
-				    the_custom_logo();
-				} ?>
-			<div id="btn_close_menu" class="btn_menu_container">
-				<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"/></svg>
-			</div>
-		</div>
-		<?php wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
-	</nav>
-	
+	<?php 
+		if(has_nav_menu('bt-custom-menu')): ?>
+			<!-- Navigation -->
+			<nav id="main-nav" class="main_navigation">
+				<div class="logo_menu">
+					<?php 
+						if(function_exists( 'the_custom_logo' )){
+						    the_custom_logo();
+						} ?>
+					<div id="btn_close_menu" class="btn_menu_container">
+						<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"/></svg>
+					</div>
+				</div>
+				<?php wp_nav_menu( array( 'theme_location' => 'bt-custom-menu', 'container_class' => 'custom-menu-class' ) ); ?>
+			</nav>
+	<?php endif; ?>
 	<!-- MAIN -->
 	<main class="main_site_wrapper">
