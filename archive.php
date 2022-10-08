@@ -35,6 +35,9 @@
 					endwhile;
 				endif; ?>
 		</div>
+		<?php
+			$paged = (get_query_var( 'paged', 1 )) ? get_query_var( 'paged', 1 ) : 1;
+			bt_custom_pagination($wp_query->max_num_pages, 1, $paged); ?>
 	</div>
 </section>
 

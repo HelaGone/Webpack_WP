@@ -25,30 +25,30 @@
 		// wp_enqueue_style('webpack_styles', get_template_directory_uri().'/dist/main.css', array(), '1.0.0');
 
 		//Webpack scripts & styles (Selective enqueue)
-		wp_register_script('base-theme-main', get_template_directory_uri().'/dist/main.js', array(), '1.0.0', true);
-		wp_register_script('base-theme-home', get_template_directory_uri().'/dist/home.js', array(), '1.0.0', true);
-		wp_register_script('base-theme-category', get_template_directory_uri().'/dist/category.js', array(), '1.0.0', true);
-		wp_register_script('base-theme-author', get_template_directory_uri().'/dist/author.js', array(), '1.0.0', true);
-		wp_register_script('base-theme-tag', get_template_directory_uri().'/dist/tag.js', array(), '1.0.0', true);
-		wp_register_script('base-theme-archive', get_template_directory_uri().'/dist/archive.js', array(), '1.0.0', true);
-		wp_register_script('base-theme-single', get_template_directory_uri().'/dist/single.js', array(), '1.0.0', true);
+		wp_register_script('base-theme-main', get_template_directory_uri().'/dist/main.js', array(), '1.0.2', true);
+		wp_register_script('base-theme-home', get_template_directory_uri().'/dist/home.js', array(), '1.0.2', true);
+		wp_register_script('base-theme-category', get_template_directory_uri().'/dist/category.js', array(), '1.0.2', true);
+		wp_register_script('base-theme-author', get_template_directory_uri().'/dist/author.js', array(), '1.0.2', true);
+		wp_register_script('base-theme-tag', get_template_directory_uri().'/dist/tag.js', array(), '1.0.2', true);
+		wp_register_script('base-theme-archive', get_template_directory_uri().'/dist/archive.js', array(), '1.0.2', true);
+		wp_register_script('base-theme-single', get_template_directory_uri().'/dist/single.js', array(), '1.0.2', true);
 
 		if(is_front_page()||is_home()){
-			wp_enqueue_style('base-theme-home-style', get_template_directory_uri().'/dist/home.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-home-style', get_template_directory_uri().'/dist/home.css', array(), '1.0.2' );
 			wp_enqueue_script('base-theme-home');
 		}elseif(is_author()){
-			wp_enqueue_style('base-theme-author-style', get_template_directory_uri().'/dist/author.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-author-style', get_template_directory_uri().'/dist/author.css', array(), '1.0.2' );
 			wp_enqueue_script('base-theme-author');
 		}elseif(is_archive()){
-			wp_enqueue_style('base-theme-archive-style', get_template_directory_uri().'/dist/archive.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-archive-style', get_template_directory_uri().'/dist/archive.css', array(), '1.0.2' );
 			wp_enqueue_script('base-theme-archive');
 		}elseif(is_single()){
-			wp_enqueue_style('base-theme-single-style', get_template_directory_uri().'/dist/single.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-single-style', get_template_directory_uri().'/dist/single.css', array(), '1.0.2' );
 			wp_enqueue_script('base-theme-single');
 		}elseif(is_404()){
-			wp_enqueue_style('base-theme-single-style', get_template_directory_uri().'/dist/not_found.css', array(), '1.0.0.' );
+			wp_enqueue_style('base-theme-single-style', get_template_directory_uri().'/dist/not_found.css', array(), '1.0.2' );
 		}else{
-			wp_enqueue_style( 'base-theme-style', get_template_directory_uri() . '/dist/main.css', array(), '1.0.0');
+			wp_enqueue_style( 'base-theme-style', get_template_directory_uri() . '/dist/main.css', array(), '1.0.2');
 			wp_enqueue_script('base-theme-main');
 		}
 
@@ -87,7 +87,7 @@
 	 * Menu Widget
 	*/
 	function bt_custom_new_menu() {
-	  register_nav_menu('my-custom-menu',__( 'My Custom Menu' ));
+	  register_nav_menu('bt-custom-menu', 'Menú principal');
 	}
 	add_action( 'init', 'bt_custom_new_menu' );
 
@@ -330,6 +330,67 @@
 		</style>
 <?php 
 	} //END FUNCTION CUSTOMIZE CSS
+
+	/**
+	 * [bt_custom_pagination]
+	 * @param [Int] $numpages
+	 * @param [Int] $pagerange
+	 * @param [Int] $paged
+	 *
+	 */
+	function bt_custom_pagination($numpages = '', $pagerange = '', $paged='') {
+	  if (empty($pagerange)) {
+	    $pagerange = 1;
+	  }
+	  /**
+	   * This first part of our function is a fallback
+	   * for custom pagination inside a regular loop that
+	   * uses the global $paged and global $wp_query variables.
+	   *
+	   * It's good because we can now override default pagination
+	   * in our theme, and use this function in default quries
+	   * and custom queries.
+	   */
+		global $paged;
+
+	  	if (empty($paged)) {
+	    	$paged = 1;
+	  	}
+
+	  	if ($numpages == '') {
+	    	global $wp_query;
+	    	$numpages = $wp_query->max_num_pages;
+
+	    	if(!$numpages) {
+	        	$numpages = 1;
+	    	}
+	  	}
+		$big = 999999999;
+		$pagination_args = array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format'          => 'page/%#%',
+		'total'           => $numpages,
+		'current'         => $paged,
+		'show_all'        => false,
+		'end_size'        => 0,
+		'mid_size'        => $pagerange,
+		'prev_next'       => false,
+		'prev_text'				=> '&lt;',
+		'next_text'				=> '&gt;',
+		'type'            => 'list',
+		'add_args'        => false,
+		'add_fragment'    => ''
+		);
+
+		$paginate_links = paginate_links($pagination_args);
+
+		if ($paginate_links) {
+			echo "<nav class='custom-pagination'>";
+				echo $paginate_links;
+			echo "</nav>";
+		}
+
+	}//custom pagination
 
 	add_action('wp_head', 'bt_customize_css');
 

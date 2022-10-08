@@ -35,6 +35,6 @@
 			'taxonomies'         => array( 'category' ),
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 		);
-		register_post_type( 'noticia', $args );
+		// register_post_type( 'especiales', $args );
 
 	});

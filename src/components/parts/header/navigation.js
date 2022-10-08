@@ -3,16 +3,19 @@ $(document).ready(function(){
 	// Hace la animación del botón menú
 	let btnMenu = document.getElementById('btn_menu');
 	let btnCloseMenu = document.getElementById('btn_close_menu');
+	const nav = document.getElementById('main-nav');
 	if(btnMenu){
 		btnMenu.addEventListener('click', ()=>{
-			// console.log("open");
-			document.getElementById('main-nav').classList.toggle('open_nav');
+			if(nav){
+				nav.classList.toggle('open_nav');
+			}
 		});
 	}
 	if(btnCloseMenu){
 		btnCloseMenu.addEventListener('click', (e) => {
-			// console.log("close");
-			document.getElementById('main-nav').classList.toggle('open_nav');
+			if(nav){
+				nav.classList.toggle('open_nav');
+			}
 		});
 	}
 

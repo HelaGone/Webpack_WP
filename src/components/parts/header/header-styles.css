@@ -1,22 +1,21 @@
 #main_site_header{
 	padding: 0 12px;
-	position:fixed;top: 0;left: 0;right: 0;z-index: 3;min-height: 64px;
+	position:fixed;top: 0;left: 0;right: 0;z-index: 3;
 	box-shadow: 1px 4px 12px rgba(0, 0, 0, .6);background-color: var(--lighter);
 }
 #main_site_header .inner_wrapper{display:grid;grid-template-columns: minmax(48px, 60px) 1fr;place-items: center;}
 #main_site_header div.social_network ul{display: flex;justify-content: space-between;flex-wrap: wrap;}
 
 #logo, .custom-logo-link{position: relative;}
-#logo a{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
-#logo{justify-self: center;font-size: 2em;font-weight: 700;}
+#logo{justify-self: center;font-size: 2em;font-weight: 700;padding: 27px 0;}
 .custom-logo-link{display: block;}
-.custom-logo-link img{width:100%;height:auto;max-width: 276px;}
+.custom-logo-link img{width:100%;height:auto;max-height: 32px;}
 .custom-logo-link a{position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
 
 /*----------- NAVIGATION -------------*/
 .btn_menu_container{display: inline-block;cursor: pointer;padding:20px 0px;justify-self: start;}
 .logo_menu{
-	margin-bottom: 60px;border-bottom: 2px solid #242424;padding-bottom: 10px;
+	margin-bottom: 40px;border-bottom: 2px solid #242424;padding-bottom: 10px;
 	display: flex;justify-content: space-between;align-items: center;
 }
 .logo_menu .custom-logo-link{max-width: 250px;height:auto;}
@@ -26,8 +25,8 @@
 		transition: width 0.125s ease-out, padding 0.125s ease-in;
 }
 .menu {text-align:left;}
-.menu li{margin-bottom: 12px;padding-bottom: 12px;border-bottom: 1px solid #242424;}
-.open_nav{width:75%;padding: 12px;}
+.menu li{padding: 20px;border-bottom: 2px solid #242424;}
+.open_nav{width:60%;padding: 12px;box-shadow: 2px 0px 8px rgba(0, 0, 0, .3);}
 
 @media only screen and (min-width:720px){
 	.main_navigation{max-width: 420px;}

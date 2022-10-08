@@ -11,6 +11,7 @@
 				$catLink = get_category_link($catId);
 			}
 			$author = get_the_author_meta("display_name");
+			$subtitle = (get_post_meta($post->ID, 'post_subtitle', true)) ? get_post_meta($post->ID, 'post_subtitle', true) : get_the_excerpt($post->ID);
 			?>
 			<article id="<?php echo esc_attr("article-".$post->ID); ?>" class="single_article">
 				<span class="article_cat">
@@ -21,7 +22,9 @@
 				<h1 class="main_heading">
 					<?php the_title(); ?>
 				</h1>
-				<h2 class="subheading">Este es un subheading de la nota o mejor conocido como bajada</h2>
+				<h2 class="subheading">
+					<?php echo $subtitle; ?>
+				</h2>
 				<p class="article_author"><?php echo $author; ?></p>
 				<figure class="article_figure">
 					<div class="image_frame">
