@@ -4,12 +4,13 @@
 	if(have_posts()):
 		while(have_posts()):
 			the_post(); 
-			$category = get_categories()[0];
-			$catName = $category->name;
-			$catId = $category->term_id;
-			$catLink = get_category_link($catId);
-			// debug($post);
-			$author = get_the_author_meta("user_nicename");
+			$category = get_the_category();
+			if(is_array($category) && !empty($category)){
+				$catName = $category[0]->name;
+				$catId = $category[0]->term_id;
+				$catLink = get_category_link($catId);
+			}
+			$author = get_the_author_meta("display_name");
 			?>
 			<article id="<?php echo esc_attr("article-".$post->ID); ?>" class="single_article">
 				<span class="article_cat">

@@ -21,10 +21,12 @@
 				while($related->have_posts()):
 					$related->the_post();
 					setup_postdata($post);
-					$category = get_categories()[0];
-					$catName = $category->name;
-					$catLink = get_category_link($category->term_id);
-					?>
+					$category = get_the_category();
+					if(is_array($category) && !empty($category)){
+						$catName = $category[0]->name;
+						$catId = $category[0]->term_id;
+						$catLink = get_category_link($catId);
+					} ?>
 					<div class="sidebar_fig">
 						<span class="article_cat">
 							<a href="<?php echo esc_url($catLink); ?>" title="<?php echo esc_attr($catName); ?>">

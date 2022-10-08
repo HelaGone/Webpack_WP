@@ -33,6 +33,13 @@
 			s.parentNode.insertBefore(wf, s);
 		})(document);
 	</script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-SV5EVFJ1ZQ');
+	</script>
 </head>
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
