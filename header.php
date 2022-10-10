@@ -39,7 +39,7 @@
 		<div class="inner_wrapper">
 			<?php if(has_nav_menu('bt-custom-menu') ): ?>
 				<div id="btn_menu" class="flex-item btn_menu_container">
-					<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>'
+					<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
 				</div>
 			<?php endif;?>
 			<div id="logo" class="flex-item">
