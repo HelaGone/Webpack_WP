@@ -16,12 +16,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script>
+		// 'Lexend:300,400,500',
 		WebFontConfig = {
 			google:{
 				families: [
 					'Kaisei+Opti:400,500,700',
-					'Manrope:400,500,800',
-					// 'Lexend:300,400,500',
+					'Manrope:400,500,800&display=swap'
 				]
 			}
 		};
