@@ -37,13 +37,11 @@
 <body <?php body_class(); ?>>
 	<header id="main_site_header">
 		<div class="inner_wrapper">
-			<div id="btn_menu" class="flex-item btn_menu_container">
-				<?php 
-					echo has_nav_menu('bt-custom-menu') 
-						? '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>' 
-						: '';
-				?>
-			</div>
+			<?php if(has_nav_menu('bt-custom-menu') ): ?>
+				<div id="btn_menu" class="flex-item btn_menu_container">
+					<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/></svg>
+				</div>
+			<?php endif;?>
 			<div id="logo" class="flex-item">
 				<a href="<?php echo esc_url(home_url()); ?>" title="Navigate to home page">
 					<?php 
