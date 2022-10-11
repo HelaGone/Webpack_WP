@@ -9,8 +9,9 @@
 .article_content h2, .article_content h3{font-weight: 800;margin-bottom:20px;font-size: 1.125em;line-height: 30px;}
 .article_content p{margin-bottom: 24px;}
 .article_content img{max-width: 100%;height: auto;margin-bottom:24px;}
-.article_content .wp-block-image:has(figcaption){margin-bottom: 4px;}
+.article_content .wp-block-image:has(figcaption){margin-bottom: 20px;}
 .article_content .wp-block-image:has(figcaption) > figcaption{font-size: 12px;color: var(--neutro);line-height: 16px;}
+.article_content .wp-block-image:has(figcaption) > img{margin-bottom: 0;}
 .article_content div:has(img){max-width: 100%;}
 .article_content div:has(img) > img{margin-bottom: 0;}
 .article_figure figcaption, .article_content div:has(img) > p{font-size: 12px;color: var(--neutro);line-height: 16px;}
