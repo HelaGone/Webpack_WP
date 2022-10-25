@@ -1,6 +1,7 @@
 if ('serviceWorker' in navigator) {
-  	// Use the window load event to keep the page load performant
-  	// window.addEventListener('load', () => {
-   //  	navigator.serviceWorker.register('./wp-content/themes/base-theme/dist/service-worker.js');
-  	// });
+  	window.addEventListener('load', () => {
+		const domainUrl = (window.location.host === "localhost") ? `${window.location.origin}/webpack_theme/` : window.location.origin;
+		console.log("--SW--");
+    	navigator.serviceWorker.register(`${domainUrl}/sw.js`);
+  	});
 }

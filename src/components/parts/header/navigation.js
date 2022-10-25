@@ -1,4 +1,4 @@
-$(document).ready(function(){
+document.addEventListener("DOMContentLoaded", function(){
 	console.log('navigation');
 	// Hace la animación del botón menú
 	let btnMenu = document.getElementById('btn_menu');
