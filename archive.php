@@ -1,7 +1,10 @@
-<?php get_header(); global $wp_query; ?>
+<?php get_header(); global $wp_query; $archive_description =  get_the_archive_description(); ?>
 <section class="archive_section">
 	<div class="inner_wrapper">
 		<h1 class="main_heading"><?php echo get_the_archive_title(); ?></h1>
+		<div class="archive-desc">
+			<?php echo $archive_description; ?>
+		</div>
 		<div class="posts_pool">
 			<?php 
 				if(have_posts()):

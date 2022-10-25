@@ -19,7 +19,7 @@
 		wp_localize_script( 'functions', 'ajax_url', array('ajax_url' => admin_url('admin-ajax.php')));
 
 		// styles
-		wp_enqueue_style( 'styles', get_stylesheet_uri() );
+		wp_enqueue_style( 'styles', get_stylesheet_directory_uri() );
 
 		//webpack styles
 		// wp_enqueue_style('webpack_styles', get_template_directory_uri().'/dist/main.css', array(), '1.0.0');
