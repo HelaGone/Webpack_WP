@@ -1,4 +1,5 @@
 .archive_section .main_heading{padding-top: 12px;text-align: center;}
+.archive-desc{max-width: 666px;margin:0 auto 12px auto;line-height: 1.5;}
 .page-numbers{display: flex;flex-direction: row;gap: 12px;justify-content: center;align-items: center;}
 .page-numbers li:has(.dots){display: none;}
 .page-numbers li{min-width: 36px; background-color: var(--light);padding: 10px;border-radius: 40px;font-weight: 700;}
